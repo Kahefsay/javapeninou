@@ -1,6 +1,6 @@
 package personne;
 
-public class Personne  {
+public class Personne implements Comparable<Personne>  {
 	
 	private String nom, prenom;
 	
@@ -21,10 +21,14 @@ public class Personne  {
 	public String getPrenom() {
 		return this.prenom;
 	}
+
+	public int compareTo(Personne personne) {
+	    return this.toString().compareTo(personne.toString());
+    }
 	
 	@Override
 	public String toString () {
-		return "Nom : "+this.nom+", prénom : "+this.prenom;
+		return "Nom : "+this.nom+", pr?nom : "+this.prenom;
 	}
 
 }

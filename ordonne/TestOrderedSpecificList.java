@@ -7,11 +7,8 @@ import personne.Personne;
 public class TestOrderedSpecificList {
 
 	public static void main(String[] args) {
-		
-		/*
-		 A decommenter
-		 
-		OrderedSpecificList<String> sls = new OrderedSpecificList<String>();
+
+		OrderedSpecificList<String> sls = new OrderedSpecificList<>();
 		sls.addValue("test10");
 		sls.addValue("test90");
 		sls.addValue("test20");
@@ -54,7 +51,6 @@ public class TestOrderedSpecificList {
 			System.out.println(p);
 		}
 		System.out.println("End OrderedSpecificList<Personne>");	
-		
-		*/
+
 	}
 }

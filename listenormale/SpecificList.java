@@ -9,31 +9,35 @@ public class SpecificList <E> {
 	// Utiliser le type Object pour stocker !!
 	
 	// Attributs 
-	private  Object  arraySpecifiList[] = new Object[10];
+	private Object arraySpecifiList [];
 	private int size = 0;
 	
-	public SpecificList() {
+	SpecificList() {
+		this.arraySpecifiList = new Object [10];
 		for (int i=0; i<10; i++) {
 			arraySpecifiList[i] = new Object();
 		}
 	}
 	
 	public int getSize() {
-		return this.arraySpecifiList.length;
+		return this.size;
 	}
 	
 	public void addValue(E value) {
 		this.arraySpecifiList[this.size] = value;
 		size++;
 	}
-	
-	@SuppressWarnings("unchecked")
-	public E getValue(int index) {
+
+	public <E> E getValue(int index) {
 		return (E) this.arraySpecifiList[index];
 	}
 	
 	public ArrayList<E> toArrayList() {
-		return new ArrayList<E>(Arrays.asList((E[])this.arraySpecifiList));		
+		ArrayList<E> arrayListSpecificList = new ArrayList<E>();
+		for(int i = 0; i < this.getSize(); i++){
+			{ arrayListSpecificList.add((E) this.arraySpecifiList[i]); }
+		}
+		return arrayListSpecificList;
 	}
 	
 	
@@ -50,13 +54,13 @@ public class SpecificList <E> {
 
 /*
  	Rappels :
- 		Création d'un tableau de 20 éléments : 
+ 		Cr?ation d'un tableau de 20 ?l?ments : 
  			TypeELTS t [];
  			t = new TypeELTS [20] ; 
 			for (i=0; i<20; i++) {
 				t[i] = new TypeELTS();
 			}
 			for (i=0; i<20; i++) {
-				t[i].soSomething(); // méthode de la classe TypeELTS
+				t[i].soSomething(); // m?thode de la classe TypeELTS
 			}
 */
